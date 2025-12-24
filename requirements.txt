@@ -1,0 +1,14 @@
+numpy
+matplotlib
+pandas
+ultralytics
+wheel
+pycuda
+tensorrt
+onnx>=1.12.0
+onnx-simplifier
+onnxslim
+onnxruntime-gpu
+torch
+opencv-python
+nvidia-pyindex
