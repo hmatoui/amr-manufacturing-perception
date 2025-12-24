@@ -55,7 +55,7 @@ def test_model(model_path, depth_pro_model_path, test_images_path, results_path)
         annotated_image = results[0].plot()  # Annotated image with detections
 
         # Save the result to the results folder
-        results_images_path = os.path.join(results_path, "images")
+        results_images_path = os.path.join(results_path, "annotated_images")
         if not os.path.exists(results_images_path):
             os.makedirs(results_images_path)
         save_annotation_path = os.path.join(results_images_path, image_name)
@@ -77,7 +77,7 @@ def test_model(model_path, depth_pro_model_path, test_images_path, results_path)
             cv2.rectangle(image_depth_input, (x1, y1), (x2, y2), (0, 255, 0), 2) # Draw rectangle
 
         # Save the result to the results folder
-        results_images_path = os.path.join(results_path, "images_depth_input")
+        results_images_path = os.path.join(results_path, "depthPro_input_images")
         if not os.path.exists(results_images_path):
             os.makedirs(results_images_path)
         save_path = os.path.join(results_images_path, image_name)
@@ -142,7 +142,7 @@ def test_model(model_path, depth_pro_model_path, test_images_path, results_path)
             cv2.putText(annotated_image, text, (text_x, text_y), font, font_scale, (255, 255, 255), font_thickness)
 
         # Save the result to the results folder
-        results_images_path = os.path.join(results_path, "images_distance")
+        results_images_path = os.path.join(results_path, "annotated_depth_images")
         if not os.path.exists(results_images_path):
             os.makedirs(results_images_path)
         save_path = os.path.join(results_images_path, image_name)
@@ -157,7 +157,7 @@ if __name__ == "__main__":
     DepthPRO_MODEL_PATH = "models/depth_pro/depth_pro.pt"  # Replace with your model path
     TEST_IMAGES_PATH = "datasets/sew-dataset-2025/images/test/05_rgb/industrial"      # Replace with the path to your test images
     TEST_VIDEOS_PATH = ""      # Replace with the path to your test images
-    RESULTS_PATH = "results/model_test"        # Replace with the path to save results
+    RESULTS_PATH = "results"        # Replace with the path to save results
 
     # Run the test
     test_model(MODEL_PATH, DepthPRO_MODEL_PATH, TEST_IMAGES_PATH, RESULTS_PATH)
